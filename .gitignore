@@ -1,0 +1,24 @@
+# Large or raw data (never commit)
+*.bak
+*.mdf
+*.ldf
+*.bacpac
+*.csv
+*.parquet
+*.xlsx
+*.zip
+*.pbix
+*.rpt
+*.log
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.vs/
+.idea/
+*.suo
+*.user
+.env
+~$*
