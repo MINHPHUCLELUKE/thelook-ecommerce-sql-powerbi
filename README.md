@@ -1,6 +1,6 @@
 # The Look Co. | E-commerce analytics with SQL Server and Power BI
 
-An end-to-end analytics project on a fictional online clothing retailer: raw tables cleaned and modeled in T-SQL, analyzed with eight query packs, and delivered as a four-page Power BI report. Key figures in the report were reconciled back to SQL (40+ checks, see the QA checklist).
+An end-to-end analytics project on a fictional online clothing retailer: raw tables cleaned and modeled in T-SQL, analyzed with eight query packs, and delivered as a four-page Power BI report. Key figures in the report were reconciled back to SQL (40+ values across 38 checks, see the QA checklist).
 
 ![Executive Sales page](docs/screenshots/01_executive_sales.png)
 
@@ -58,14 +58,14 @@ Page 1 (Executive Sales) is shown at the top. The other three pages:
 One date table drives every fact table. Orders use the created date by default; shipped, delivered and returned dates (and the inventory sold date) are set up as inactive relationships, so analysis by those dates can be added with `USERELATIONSHIP`; the current 74 measures do not use them. Details are in [`powerbi/data_model.md`](powerbi/data_model.md) and every measure is listed in [`powerbi/dax_measures.md`](powerbi/dax_measures.md).
 
 ## How the numbers were checked
-The Power BI model was queried and compared with SQL for more than 40 values (revenue by year, return and cancel rates, segment counts, funnel counts, stock value and more). Every check passes; see [`docs/qa_checklist.md`](docs/qa_checklist.md). Problems found along the way are recorded there too, for example a stuck-shipments measure that counted from midnight instead of the exact last timestamp, and segment shares that all showed 100% until a filter was cleared on the sort helper table.
+The Power BI model was queried and compared with SQL on 38 checks covering more than 40 values (revenue by year, return and cancel rates, segment counts, funnel counts, stock value and more). Every check passes; see [`docs/qa_checklist.md`](docs/qa_checklist.md). Problems found along the way are recorded there too, for example a stuck-shipments measure that counted from midnight instead of the exact last timestamp, and segment shares that all showed 100% until a filter was cleared on the sort helper table.
 
 ## Decisions and limitations
 - **Partial 2024:** the data stops on 13 May 2024. Year-over-year uses the same 1 January to 13 May window each year, and May 2024 is lightened on the monthly chart.
 - **Gross vs net revenue:** gross excludes cancelled items; net also excludes returned items. Net still includes Processing and Shipped items, so it is not "delivered revenue": only $2.73M (34%) of the $8.10M net revenue is in Complete status. Average order value is gross revenue divided by non-cancelled orders ($86.42).
 - **Synthetic data:** margin, conversion, delivery time and sell-through are almost identical across channels, centers and categories. That is a property of the data and not a business result.
 - **Funnel:** anonymous sessions never buy and logged-in sessions always buy, so purchase rate equals logged-in share. Channels cannot be ranked on conversion, and there is no marketing cost data.
-- **Delivery times:** 19.6% of order items have impossible timelines (a ship or delivery date before the order date). They are excluded from delivery-time metrics only.
+- **Delivery times:** 19.6% of order items have impossible timelines (a stage timestamp earlier than the previous stage: shipped before created, delivered before shipped, or returned before delivered). They are excluded from delivery-time metrics only.
 - **Money columns:** prices and costs are stored as `float`, so totals are compared at two decimals.
 - **Customer key:** emails are not unique, so `user_id` is the only customer key.
 

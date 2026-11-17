@@ -8,7 +8,7 @@ Revenue terms: **gross** = all items except Cancelled; **net** = also excluding 
 1. **Growth is strong, and 2024 is running well ahead.** Net revenue grew from $148k (2019) to $2.79M (2023). Like-for-like (Jan 1 to May 13), 2024 net revenue is $2.16M against $0.82M in 2023, up 164%, with orders up 163%. Full-year growth slowed from 227% in 2020 to 71% to 91% a year since (76% in 2023), so the jump is in the partial 2024 figures.
 2. **Margin is flat at about 52%.** Prices always equal list price (no discounting) and costs track price, so margin barely moves by year, department or channel. The real margin differences are by category.
 3. **Most customers buy once.** 66.7% of buying customers placed a single order, and nobody placed more than four. 27.9% of registered users never bought.
-4. **$6.8M of stock (at cost) is more than a year old and unsold.** 54% of unsold items are over two years old.
+4. **$6.8M of stock (at cost) is more than a year old and unsold.** 54% of unsold stock value is over two years old.
 5. **$2.1M of "Shipped" revenue looks stuck.** Items shipped more than 14 days ago and still not delivered, against a normal delivery time of about 4 days.
 6. **Channels, centers and categories look almost identical on conversion, returns and speed.** Differences are within noise. The levers that matter are volume, price mix, stock and retention.
 
@@ -31,7 +31,7 @@ So what: growth comes from more orders, not higher prices or better margin. Jean
 |---|---|
 | Return rate is narrow | 11.7% overall; categories range from 10.6% (Women's Socks and Hosiery) to 14.3% (Women's Jumpsuits and Rompers, only 811 items) |
 | Cost follows volume and price, not rate | Largest profit lost to returns: Men's Outerwear and Coats $49.1k, Men's Jeans $36.8k, Men's Suits and Sport Coats $36.6k, Men's Sweaters $28.0k |
-| Brand differences are small | Among brands with 500+ items: Diesel 14.8% (1,233 items), Anne Klein 14.0%, Orvis 13.5%, Calvin Klein 13.2%. With a few hundred items each, gaps of 1 to 2 points are mostly noise |
+| Brand differences are small | Among brands with 500+ items: Diesel 14.8% (1,233 items), Anne Klein 14.0%, Orvis 13.5%, Calvin Klein 13.2%. With 500 to 1,300 items each, gaps of 1 to 2 points are mostly noise |
 | Price band barely matters | Rates stay between 11.3% and 12.1%, except Women over $200 at 12.9% (1,862 items) |
 | Slow upward drift | 10.7% (2019, small sample) to 11.8% (2022 to 2023) to 12.0% (2024) |
 | Returns come back fast | About 1.5 days from delivery to return in both departments |
@@ -47,7 +47,7 @@ So what: to cut return losses, target the high-value men's categories (outerwear
 | Monthly repeat-order rate is low but rising | In 2019 to 2021 cohorts, about 1% to 3% of a cohort orders in any later month; in late-2023 and 2024 cohorts, about 5% to 13% in month 1 |
 | Repeat rate falls for newer cohorts | 52% (2019 cohort) to 21% (2024), mostly because younger cohorts have had less time to repeat |
 
-Cautions: the last cell of every cohort is May 2024 (partial month) and looks artificially low, so filter on `is_partial_month_cell`. Cohorts from 2019 are tiny (10 to 280 customers), so their percentages are noisy.
+Cautions: May 2024 is a partial month, so any cohort cell in May 2024 looks artificially low. Query A in `03_cohort_retention.sql` includes those cells, so exclude activity months of May 2024 when reading it; the Power BI view `vw_cohort_retention` already drops them. Cohorts from 2019 are tiny (10 to 280 customers), so their percentages are noisy.
 
 So what: the cheapest growth lever is the second order. Illustration: turning just 5% of the 48,103 one-time buyers into repeat customers is about 2,400 extra orders, roughly $209k at the 2024 year-to-date average order value of $86.86.
 
