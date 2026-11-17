@@ -20,7 +20,7 @@ An end-to-end analytics project on a fictional online clothing retailer: raw tab
 ## Headline findings
 | # | Finding | Evidence | Where |
 |---|---|---|---|
-| 1 | Growth is strong, and 2024 is running well ahead | Net revenue $148k (2019) to $2.79M (2023). Like-for-like (1 Jan to 13 May), 2024 net revenue is $2.16M vs $0.82M, up 164%, and orders are up 163%. The 2024 window includes 29 February, one more day than 2023; per day, revenue growth is about +162%. The last 13 days of May run unusually high, which may be an artifact of how the data was generated | `sql/04_analysis/01` |
+| 1 | Growth is strong, and 2024 is running well ahead | Net revenue $148k (2019) to $2.79M (2023). Like-for-like (1 Jan to 13 May), 2024 net revenue is $2.16M vs $0.82M, up 164%, and orders are up 163%. The 2024 window includes 29 February, one more day than 2023; per day, revenue growth is about +162%. The first 13 days of May 2024 (the last 13 days of data) run unusually high, which may be an artifact of how the data was generated | `sql/04_analysis/01` |
 | 2 | Margin is flat | Net margin 51.8% to 52.1% every year. Jeans is the second biggest profit pool with the thinnest category margin (46.5%) | `sql/04_analysis/01`, `02` |
 | 3 | Most customers buy once | 66.7% of 72,096 buyers ordered once; 27.9% of registered users never bought | `sql/04_analysis/03` |
 | 4 | A small group carries a lot of value | Loyal plus Champions are 8.5% of customers and about 19% of revenue. "At risk" has 1,379 customers and $342k lifetime revenue | `sql/04_analysis/04` |
