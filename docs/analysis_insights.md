@@ -99,7 +99,7 @@ Based on 44,330 delivered items with valid timelines. So what: speed is not a di
 | Stock overbuying started in 2020 | Items received in 2018 and 2019 all sold; from 2020 onward, far more stock was received than sold |
 | Biggest unsold value by category | Jeans $1.16M, Outerwear and Coats $1.00M, Sweaters $0.68M |
 | Biggest unsold value by center | Houston $1.27M, Memphis $1.14M, Chicago $1.10M |
-| Largest single products | Men's North Face jackets about $11k each unsold. Their sell-through is normal; they are large because of volume and price |
+| Largest single products | Men's North Face jackets, about $11k unsold per product id in query E. Their sell-through is normal; they are large because of volume and price. The report's top 10 table groups by product name instead, so its top row (The North Face Apex Bionic Soft Shell Jacket - Men's, 48 items, $21,223) is about twice that, most likely because two catalog entries share the name (see the caveat below) |
 
 Caveat: `sold_at` is set for every order item, including cancelled and returned ones. Net of those, sell-through is 27.8% (135,749 of 488,146; Men 27.8%, Women 27.9%) against 37.1% gross, from query G. Also, one product name (The North Face Denali Down Womens Jacket 2013) appears under two categories with different product ids, which suggests duplicate catalog entries.
 
