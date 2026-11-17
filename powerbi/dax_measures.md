@@ -114,7 +114,7 @@ DIVIDE ( [Segment Net Revenue],
 Retention % = DIVIDE ( SUM ( vw_cohort_retention[active_customers] ), SUM ( vw_cohort_retention[cohort_customers] ) )   -- Percentage
 ```
 
-Segment sort order. A helper table fixes the order Champions, Loyal, Needs attention, At risk, New or recent, Lost. It is related to `vw_customer_rfm[segment]` (many to one, single direction) and `vw_customer_rfm[segment]` is sorted by `'Segment Order'[Segment Order]`. Both share measures must clear the filter on the helper table as well as on the segment column, otherwise every share shows 100%.
+Segment sort order. A helper table fixes the order Champions, Loyal, Needs attention, At risk, New or recent, Lost. It is related to `vw_customer_rfm[segment]` (many to one, single direction). The visuals put `'Segment Order'[Segment]` on the axis, sorted by `'Segment Order'[Segment Order]` (sort-by-column only works within one table). Both share measures must clear the filter on the helper table as well as on the segment column, otherwise every share shows 100%.
 ```dax
 Segment Order = DATATABLE ( "Segment", STRING, "Segment Order", INTEGER,
     { { "Champions", 1 }, { "Loyal", 2 }, { "Needs attention", 3 },

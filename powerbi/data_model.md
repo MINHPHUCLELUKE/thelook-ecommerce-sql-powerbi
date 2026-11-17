@@ -14,7 +14,7 @@ Connect to any SQL Server instance that holds the `dw` schema built by `sql/` (d
 | dw.fact_order_items | Sales facts (180,862 rows) |
 | dw.fact_inventory | Stock facts (488,146 rows) |
 | dw.fact_web_sessions | Session facts (680,862 rows) |
-| dw.vw_customer_rfm | RFM segments (72,096 rows) |
+| dw.vw_customer_rfm | Customer segments by recency and frequency (72,096 rows) |
 | dw.vw_cohort_retention | Cohort grid (754 rows) |
 | dw.dim_status | Loaded but not related or used by any measure |
 
@@ -24,7 +24,7 @@ Four tables are created inside Power BI: `_Measures` (holds all 74 measures), `F
 | From (many) | To (one) | Active |
 |---|---|---|
 | fact_order_items[created_date_key] | dim_date[date_key] | Yes |
-| fact_order_items[shipped_date_key] | dim_date[date_key] | No (USERELATIONSHIP) |
+| fact_order_items[shipped_date_key] | dim_date[date_key] | No |
 | fact_order_items[delivered_date_key] | dim_date[date_key] | No |
 | fact_order_items[returned_date_key] | dim_date[date_key] | No |
 | fact_order_items[user_key] | dim_users[user_key] | Yes |
@@ -51,7 +51,7 @@ Not related on purpose: dim_products and dim_distribution_centers (it would crea
 7. Display folders: Sales, Time intelligence, Returns, Customers, Marketing funnel, Operations, Inventory, Bridge.
 
 ## 4. Design decisions
-- **Role-playing dates:** one date table serves orders (created, shipped, delivered, returned) and stock (received, sold). Inactive relationships are activated inside measures.
+- **Role-playing dates:** one date table serves orders (created, shipped, delivered, returned) and stock (received, sold). The non-default date relationships are inactive and ready for `USERELATIONSHIP`; the current measures do not use them.
 - **Partial 2024:** the data ends on 13 May 2024, so year-over-year measures use the same 1 January to 13 May window each year (`dim_date[is_ytd_window]`).
 - **Why the cutoff for stuck shipments uses the full timestamp:** midnight of the last day would count extra items and differ from the SQL result.
 - **Why a helper table sorts segments:** Power BI cannot sort a column by another column derived from itself, so segment order comes from a small independent table and the visuals use its `Segment` column on the axis. Both share measures clear the filter on that table, otherwise every share shows 100%.

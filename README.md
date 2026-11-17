@@ -8,19 +8,19 @@ An end-to-end analytics project on a fictional online clothing retailer: raw tab
 
 **Business brief.** The Look Co. is growing quickly but the leadership team has four questions. Is growth healthy and profitable? Who are the customers and do they come back? Where does the web funnel leak? Are fulfilment and stock under control? The report answers one question per page.
 
-**Scale:** 100,000 customers, 180,862 order items, 680,862 web sessions, 488,146 stock items, January 2019 to 13 May 2024.
+**Scale:** 100,000 customers, 180,862 order items, 680,862 web sessions, 488,146 stock items, orders from January 2019 to 13 May 2024 (the date table and the first stock receipts start in 2018).
 
 ## What this project shows
 - **T-SQL data engineering:** typed clean layer, star schema with keys and constraints, data quality diagnostics, reconciliation checks, reporting views and a stored procedure.
-- **Analysis:** growth and margin, returns, cohort retention, RFM segmentation, web funnel, fulfilment, inventory aging and sell-through.
-- **Power BI modeling:** star schema with role-playing dates, 74 DAX measures, like-for-like time intelligence for a partial year, helper tables and a fixed segment sort.
+- **Analysis:** growth and margin, returns, cohort retention, recency and frequency (R/F) customer segmentation, web funnel, fulfilment, inventory aging and sell-through.
+- **Power BI modeling:** star schema with one shared date table and inactive role-playing date relationships, 74 DAX measures, like-for-like time intelligence for a partial year, helper tables and a fixed segment sort.
 - **Report design:** custom theme, left navigation panel, synced slicers and caveats written next to the visuals they affect.
 - **Analytical judgement:** the dataset is synthetic and very uniform, so the project states plainly what the data can and cannot support.
 
 ## Headline findings
 | # | Finding | Evidence | Where |
 |---|---|---|---|
-| 1 | Growth is strong and accelerating | Net revenue $148k (2019) to $2.79M (2023). Like-for-like (1 Jan to 13 May), 2024 net revenue is $2.16M vs $0.82M, up 164%, and orders are up 163%. The last 13 days of May run unusually high, which may be an artifact of how the data was generated | `sql/04_analysis/01` |
+| 1 | Growth is strong, and 2024 is running well ahead | Net revenue $148k (2019) to $2.79M (2023). Like-for-like (1 Jan to 13 May), 2024 net revenue is $2.16M vs $0.82M, up 164%, and orders are up 163%. The last 13 days of May run unusually high, which may be an artifact of how the data was generated | `sql/04_analysis/01` |
 | 2 | Margin is flat | Net margin 51.8% to 52.1% every year. Jeans is the second biggest profit pool with the thinnest category margin (46.5%) | `sql/04_analysis/01`, `02` |
 | 3 | Most customers buy once | 66.7% of 72,096 buyers ordered once; 27.9% of registered users never bought | `sql/04_analysis/03` |
 | 4 | A small group carries a lot of value | Loyal plus Champions are 8.5% of customers and about 19% of revenue. "At risk" has 1,379 customers and $342k lifetime revenue | `sql/04_analysis/04` |
@@ -55,7 +55,7 @@ Page 1 (Executive Sales) is shown at the top. The other three pages:
 ## Data model
 ![Data model](docs/erd.png)
 
-One date table drives every fact table. Orders use the created date by default; shipped, delivered and returned dates are inactive relationships activated inside measures with `USERELATIONSHIP`. Details are in [`powerbi/data_model.md`](powerbi/data_model.md) and every measure is listed in [`powerbi/dax_measures.md`](powerbi/dax_measures.md).
+One date table drives every fact table. Orders use the created date by default; shipped, delivered and returned dates (and the inventory sold date) are set up as inactive relationships, so analysis by those dates can be added with `USERELATIONSHIP`; the current 74 measures do not use them. Details are in [`powerbi/data_model.md`](powerbi/data_model.md) and every measure is listed in [`powerbi/dax_measures.md`](powerbi/dax_measures.md).
 
 ## How the numbers were checked
 The Power BI model was queried and compared with SQL for more than 40 values (revenue by year, return and cancel rates, segment counts, funnel counts, stock value and more). Every check passes; see [`docs/qa_checklist.md`](docs/qa_checklist.md). Problems found along the way are recorded there too, for example a stuck-shipments measure that counted from midnight instead of the exact last timestamp, and segment shares that all showed 100% until a filter was cleared on the sort helper table.

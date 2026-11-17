@@ -1,8 +1,9 @@
 /* =====================================================================
-   4.4 RFM segmentation
+   4.4 Customer segmentation (recency and frequency)
    Business question: who are the best customers, and who is slipping away?
    Recency: days since last non-cancelled order (as of the last order in the data).
-   Frequency: number of orders (capped at 5 for scoring). Monetary: net revenue.
+   Frequency: number of orders (scored as the order count; the maximum in the data is 4).
+   Monetary: net revenue, scored with NTILE(5) for reference but not used in the segment rules.
    Techniques: NTILE, CASE segmentation, nested window aggregates, reusable view.
    ===================================================================== */
 

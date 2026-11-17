@@ -5,7 +5,7 @@ Revenue terms: **gross** = all items except Cancelled; **net** = also excluding 
 
 ## Headline findings
 
-1. **Growth is strong and accelerating.** Net revenue grew from $148k (2019) to $2.79M (2023). Like-for-like (Jan 1 to May 13), 2024 net revenue is $2.16M against $0.82M in 2023, up 164%, with orders up 163%. Full-year growth was 76% in 2023.
+1. **Growth is strong, and 2024 is running well ahead.** Net revenue grew from $148k (2019) to $2.79M (2023). Like-for-like (Jan 1 to May 13), 2024 net revenue is $2.16M against $0.82M in 2023, up 164%, with orders up 163%. Full-year growth slowed from 227% in 2020 to 71% to 91% a year since (76% in 2023), so the jump is in the partial 2024 figures.
 2. **Margin is flat at about 52%.** Prices always equal list price (no discounting) and costs track price, so margin barely moves by year, department or channel. The real margin differences are by category.
 3. **Most customers buy once.** 66.7% of buying customers placed a single order, and nobody placed more than four. 27.9% of registered users never bought.
 4. **$6.8M of stock (at cost) is more than a year old and unsold.** 54% of unsold items are over two years old.
@@ -49,9 +49,9 @@ So what: to cut return losses, target the high-value men's categories (outerwear
 
 Cautions: the last cell of every cohort is May 2024 (partial month) and looks artificially low, so filter on `is_partial_month_cell`. Cohorts from 2019 are tiny (10 to 280 customers), so their percentages are noisy.
 
-So what: the cheapest growth lever is the second order. Illustration: turning just 5% of the 48,103 one-time buyers into repeat customers is about 2,400 extra orders, roughly $209k at the $86.86 average order value.
+So what: the cheapest growth lever is the second order. Illustration: turning just 5% of the 48,103 one-time buyers into repeat customers is about 2,400 extra orders, roughly $209k at the 2024 year-to-date average order value of $86.86.
 
-## 4.4 RFM segmentation (72,096 buying customers)
+## 4.4 Customer segmentation by recency and frequency (72,096 buying customers)
 | Segment | Customers | Share of revenue | Avg orders | Avg days since last order | Avg net spend |
 |---|---|---|---|---|---|
 | Lost | 27,460 (38.1%) | 30.8% ($2.49M) | 1.2 | 834 | $91 |
