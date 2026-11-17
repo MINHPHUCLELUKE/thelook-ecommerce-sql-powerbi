@@ -10,6 +10,7 @@ Completed 15 Nov 2026. Every Power BI value below was queried from the open mode
 | Net Profit | $4,201,367.01 (SUM of net_profit in dw.fact_order_items) | $4,201,367.01 | [x] |
 | Net Margin % | about 51.9% | 51.9% | [x] |
 | Orders (non-cancelled) | 106,135 (distinct order_id where is_cancelled = 0) | 106,135 | [x] |
+| Orders by year add up to more than the total | Yearly distinct counts sum to 106,296, 161 above 106,135, because an order with items in two years counts once in each year (see definitions) | as expected | [x] |
 | Net Revenue, year 2019 / 2020 / 2021 / 2022 / 2023 | $148,301.57 / $484,853.11 / $926,101.80 / $1,583,798.54 / $2,793,942.35 | same | [x] |
 | Net Revenue, year 2024 (to 13 May) | $2,159,534.10 | $2,159,534.10 | [x] |
 | Net Revenue LFL, 2023 and 2024 | $817,308.44 and $2,159,534.10 | same | [x] |

@@ -10,7 +10,7 @@ How each metric in the report is defined. SQL file names refer to the `sql/` fol
 | Delivered revenue | Gross revenue for items in Complete status only ($2.73M, 33.7% of net revenue). Kept as a sensitivity measure |
 | Net profit | Net revenue minus unit cost of the same items |
 | Net margin % | Net profit divided by net revenue |
-| Orders | Distinct order ids with at least one non-cancelled item |
+| Orders | Distinct order ids with at least one non-cancelled item. Items are dated by their own created date, so an order whose items fall in two calendar years is counted in both years. The yearly order counts on the report therefore add up to 106,296, which is 161 more than the all-time total of 106,135 |
 | Average order value | Gross revenue divided by non-cancelled orders (all time: $86.42) |
 | Currency | The data has no currency field; amounts are treated as USD |
 | Time zone | All timestamps are UTC |
