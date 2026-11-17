@@ -16,7 +16,7 @@ How each metric in the report is defined. SQL file names refer to the `sql/` fol
 | Time zone | All timestamps are UTC |
 
 ## Like-for-like growth
-The data ends on 13 May 2024, so 2024 is a partial year. Like-for-like (LFL) growth compares 1 January to 13 May of one year with the same window of the year before (134 days; `dim_date.is_ytd_window`). The LFL YoY measures take the latest year in the filter context and compare it with the year before, so with all years selected they show 2024 against 2023.
+The data ends on 13 May 2024, so 2024 is a partial year. Like-for-like (LFL) growth compares 1 January to 13 May of one year with the same calendar window of the year before (`dim_date.is_ytd_window`). The window is 134 days in leap years such as 2024 and 133 days otherwise, so the 2024 against 2023 comparison includes one extra day of 2024 sales; per day, the +164.2% revenue growth is about +162%. The LFL YoY measures take the latest year in the filter context and compare it with the year before, so with all years selected they show 2024 against 2023.
 
 ## Returns and cancellations
 - Return rate = returned items divided by non-cancelled items (11.73%).

@@ -52,7 +52,7 @@ Net Revenue PM = CALCULATE ( [Net Revenue], DATEADD ( dim_date[full_date], -1, M
 Net Revenue MoM % = DIVIDE ( [Net Revenue] - [Net Revenue PM], [Net Revenue PM] )           -- Percentage
 Net Revenue YTD = TOTALYTD ( [Net Revenue], dim_date[full_date] )                           -- Currency 0
 
--- Like-for-like: Jan 1 to May 13 of every year (dim_date[is_ytd_window] = 1, 134 days)
+-- Like-for-like: Jan 1 to May 13 of every year (dim_date[is_ytd_window] = 1; 134 days in leap years, 133 otherwise)
 Net Revenue LFL = CALCULATE ( [Net Revenue], dim_date[is_ytd_window] = 1 )                   -- Currency 0
 Net Revenue LFL LY = CALCULATE ( [Net Revenue LFL], SAMEPERIODLASTYEAR ( dim_date[full_date] ) )   -- Currency 0
 Net Revenue LFL YoY % =                                                                      -- Percentage, latest year in context vs the year before

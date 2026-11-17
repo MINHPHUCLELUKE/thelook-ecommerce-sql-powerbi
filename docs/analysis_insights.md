@@ -16,7 +16,7 @@ Revenue terms: **gross** = all items except Cancelled; **net** = also excluding 
 | Finding | Evidence |
 |---|---|
 | Steady year-over-year growth | Net revenue: 2020 +227%, 2021 +91%, 2022 +71%, 2023 +76% (full calendar years) |
-| 2024 is ahead of every prior pace | Jan 1 to May 13 net revenue $2.16M vs $0.82M in 2023 (+164%); orders 28,168 vs 10,710 (+163%) |
+| 2024 is ahead of every prior pace | Jan 1 to May 13 net revenue $2.16M vs $0.82M in 2023 (+164%); orders 28,168 vs 10,710 (+163%). The 2024 window has one extra day (29 February); per day, revenue growth is about +162% |
 | Recent run rate is steeper still | Orders per day: Jan 151, Feb 171, Mar 194, Apr 245, first 13 days of May 434. May is partial, so its month total is not comparable |
 | Margin is stable | Net margin 51.8% to 52.1% every year |
 | Category margin differs | Accessories 59.9%, Suits and Sport Coats 59.7%, Active 58.1%, Outerwear and Coats 55.6%, Jeans 46.5% |
@@ -31,7 +31,7 @@ So what: growth comes from more orders, not higher prices or better margin. Jean
 |---|---|
 | Return rate is narrow | 11.7% overall; categories range from 10.6% (Women's Socks and Hosiery) to 14.3% (Women's Jumpsuits and Rompers, only 811 items) |
 | Cost follows volume and price, not rate | Largest profit lost to returns: Men's Outerwear and Coats $49.1k, Men's Jeans $36.8k, Men's Suits and Sport Coats $36.6k, Men's Sweaters $28.0k |
-| Brand differences are small | Among brands with 500+ items: Diesel 14.8% (1,233 items), Anne Klein 14.0%, Orvis 13.5%, Calvin Klein 13.2%. With 500 to 1,300 items each, gaps of 1 to 2 points are mostly noise |
+| Brand differences are small | Among brands with 500+ items: Diesel 14.8% (1,233 items), Anne Klein 14.0%, Orvis 13.5%, Calvin Klein 13.2%. Against 11.7% overall and with 500 to 1,300 items each, gaps of 1 to 2 points are mostly noise; Diesel (about 3 points above average on 1,233 items) is the one brand that stands out |
 | Price band barely matters | Rates stay between 11.3% and 12.1%, except Women over $200 at 12.9% (1,862 items) |
 | Slow upward drift | 10.7% (2019, small sample) to 11.8% (2022 to 2023) to 12.0% (2024) |
 | Returns come back fast | About 1.5 days from delivery to return in both departments |
@@ -80,7 +80,7 @@ Cautions: anonymous sessions never purchase in this dataset, so purchase rate is
 ## 4.6 Fulfilment by distribution center
 | Finding | Evidence |
 |---|---|
-| Centers are indistinguishable | Average days to deliver 3.91 (Charleston) to 3.99 (Memphis); median about 4 days; 90th percentile 6.1 to 6.3 days |
+| Centers are indistinguishable | Average days to deliver range from about 3.91 to 3.99 across centers (for example Houston 3.91, Memphis 3.99); median about 4 days; 90th percentile 6.1 to 6.3 days |
 | About 70% to 72% delivered within 5 days | Best Savannah 72.0%, lowest Memphis 70.3% |
 | Flat over time | 3.93 to 3.98 days in every year since 2019 |
 | Stuck shipments | 38,149 items have status Shipped with a valid timeline; 35,936 (94%) were shipped more than 14 days before the end of the data, worth $2.14M |
